@@ -19,11 +19,15 @@
 $('.cc-number').formatCardNumber();
 
 $('.cc-number').on('keydown', function(event) {
-            let input = $(this);
-            if (event.key === 'Backspace' && input[0].selectionStart % 5 === 0) {
-                event.preventDefault();
-            }
-        });
+      let input = $(this);
+      if (event.key === 'Backspace' && input[0].selectionStart % 5 === 0) {
+          event.preventDefault();
+      }
+
+      if (event.key === 'Delete' && input[0].selectionStart % 1 === 0) {
+          event.preventDefault();
+      }
+});
 
 $('.cc-expires').formatCardExpiry();
 </script>
